@@ -1,10 +1,10 @@
 #!/bin/bash -e
 
-PATH=$PATH:${OPENSHIFT_DATA_DIR}/scala/bin/:${OPENSHIFT_DATA_DIR}/sbt/bin/:/bin/:/usr/bin:${OPENSHIFT_DATA_DIR}/activator/
+PATH=$PATH:${OPENSHIFT_DATA_DIR}/akka/bin/:${OPENSHIFT_DATA_DIR}/sbt/bin/:/bin/:/usr/bin:${OPENSHIFT_DATA_DIR}/activator/
 
 function start {
     cd $OPENSHIFT_REPO_DIR
-    nohup ./start.sh >> $OPENSHIFT_SCALA_LOG_DIR/scala.log 2>&1  &
+    nohup ./start.sh >> $OPENSHIFT_AKKA_LOG_DIR/akka.log 2>&1  &
 }
 
 function stop {
@@ -30,7 +30,7 @@ function build {
 
 function tidy {
     shopt -s dotglob
-    rm -rf $OPENSHIFT_SCALA_LOG_DIR/*
+    rm -rf $OPENSHIFT_AKKA_LOG_DIR/*
     rm -rf $OPENSHIFT_TMP_DIR/*
 
     cd $OPENSHIFT_REPO_DIR
