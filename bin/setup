@@ -7,12 +7,12 @@ ACTIVATOR_VERSION=1.2.10
 
 cd ${OPENSHIFT_DATA_DIR}
 
-echo "Download akka $VERSION"
-curl -s -o ${OPENSHIFT_DATA_DIR}/akka-$VERSION.tgz http://downloads.typesafe.com/akka/$VERSION/akka-$VERSION.tgz 
+echo "Download scala $VERSION"
+curl -s -o ${OPENSHIFT_DATA_DIR}/scala-$VERSION.tgz http://downloads.typesafe.com/scala/$VERSION/scala-$VERSION.tgz 
 cd ${OPENSHIFT_DATA_DIR}
-tar xzf akka-$VERSION.tgz
-rm -f akka-$VERSION.tgz
-ln -s ${OPENSHIFT_DATA_DIR}/akka-$VERSION akka
+tar xzf scala-$VERSION.tgz
+rm -f scala-$VERSION.tgz
+ln -s ${OPENSHIFT_DATA_DIR}/scala-$VERSION scala
 
 echo "Download sbt $SBT_VERSION"
 cd ${OPENSHIFT_DATA_DIR}
